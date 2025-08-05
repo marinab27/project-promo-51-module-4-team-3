@@ -1,0 +1,21 @@
+USE proyectomodulo4;
+
+CREATE TABLE authors (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+author VARCHAR (250) NOT NULL,
+job VARCHAR (250) NOT NULL,
+photo LONGTEXT
+);
+
+CREATE TABLE form (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR (250) NOT NULL,
+slogan VARCHAR (250) NOT NULL,
+repo VARCHAR (250) NOT NULL,
+demo VARCHAR (250) NOT NULL,
+technologies VARCHAR (250) NOT NULL,
+description TEXT NOT NULL,
+image LONGTEXT,
+author_id INT,
+FOREIGN KEY (author_id) REFERENCES authors(id)
+);
