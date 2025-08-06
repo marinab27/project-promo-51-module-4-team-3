@@ -1,3 +1,5 @@
+CREATE DATABASE proyectomodulo4;
+
 USE proyectomodulo4;
 
 CREATE TABLE authors (

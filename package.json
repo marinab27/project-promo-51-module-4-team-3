@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "proyectomodulo4",
   "version": "1.0.0",
-  "description": "Template para hacer proyectos con ExpressJS",
+  "description": "Proyecto Módulo 4 - Equipo 3",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -16,9 +16,9 @@
   ],
    "repository": {
     "type": "git",
-    "url": "git+https://github.com/Adalab/pw-ejercicios-en-clase-c-pt.git\".git"
+    "url": "git+https://github.com/marinab27/project-promo-51-module-4-team-3.git"
   },  
-  "author": "",
+  "author": "Equipo 3",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",

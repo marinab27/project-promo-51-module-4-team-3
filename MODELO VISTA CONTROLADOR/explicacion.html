@@ -1,0 +1,83 @@
+MODELO VISTA CONTROLADOR
+
+- Arquitectura de proyectos
+- Dividir el proyecto en capas de funcionalidad
+
+Dentro de src creamos carpetas y, dentro de cada una, un archivo js:
+- models -> projectModel.js
+- controllers -> projectController.js
+- routes -> projectRoute.js
+- db -> connection.js
+
+Flujo:
+index -> routes -> controllers -> models
+
+1. DB
+	- Conexión a la BD
+	1. Importar mysql
+	2. Crear conexión 
+	3. Exportar conexión
+
+2. INDEX.JS
+	1. Importamos las rutas
+	2. Le digo al servidor que use esas rutas
+
+3. ROUTES
+	- Creo los endpoints
+	1. Importamos express
+	2. Creamos un router que use express
+	3. Importamos los controllers
+	4. Creamos los endpoints: le decimos que cuando llegue a X ruta haga X cosa, y lo que tiene que hacer viene definido en un controller
+
+4. CONTROLLERS
+	- Controlan la info: piden datos y dan una respuesta
+	- Los datos se los piden al modelo y el modelo busca esos datos en la BD
+	1. Importamos los modelos
+	2. Creamos la función que necesitamos
+		2.1. Pedir los datos al modelo
+		2.2. Dar una respuesta
+	3. Exportamos la función (para usarla en routes)
+	
+5. MODELS
+	- Se conectan a la BD y buscan los datos 
+	1. Importamos la conexión 
+	2. Creamos la función para obtener los datos (como haciamos con los endpoints, hay que hacer una función para cada endpoint)
+		2.1. Establecer conexión
+		2.2. Hacer consulta
+		2.3. Hacer un return
+	3. Exportamos la función (para usarla en controllers)
+	
+NOTA: Se tienen ficheros por cada uno de los datos, por ejemplo, si estoy trabajando con usuarios tengo que tener una ruta, un modelo y un controlador para usuarios
+
+--------
+
+VISUALIZAR PROYECTO
+
+a. React: cuando hacemos clic en el botón de guardar proyecto, tenemos todos los datos y creamos una tarjeta para que los muestre
+
+b. EJS (motor de plantillas): podemos hacer un endpoint que, en vez de mandar datos al front, mande una vista (una página)
+
+	1. En index le decimos al servidor que use EJS
+	2. Creamos carpeta view y, dentro de esta, un archivo show.ejs. Este fichero es un html donde tengo que poner todo lo que quiero mostrar
+	3. Creamos carpeta styles, donde irán los estilos css
+	4. En el endpoint, una vez tengo todo lo que necesito, añado una respuesta para que me renderice todo lo que hay en show.ejs. La respuesta es del tipo res.render y le tenemos que pasar los datos del proyecto:
+	res.render("show", {datosdelproyecto})
+
+--------
+
+PUBLICAR PROYECTO
+
+- Publicar back: Aiven y Render 
+
+- Publicar front: 
+	a. GitHub Pages: 
+		1. Publicar el back en Render 
+		2. Cambiar la ruta de mi fetch del proyecto del módulo 3
+		3. Hacer npm run build y resto de pasos para publicar (buscar en Slack)
+	
+	b. Render: publicarlo dentro de mi servidor
+		1. Compilar proyecto front del módulo 3 con npm run build. Esto crear una carpeta dist
+		2. Crear carpeta dentro de src: web
+		3. Dentro de la carpeta web meto el proyecto compilado (carpeta dist)
+		4. Hacer un servidor de estáticos en index.js
+		server.use(express.static('./src/web'))
