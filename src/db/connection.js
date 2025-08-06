@@ -12,4 +12,4 @@ const getConnection = async () => {
     return connection;
 }
 
-module.exports = getConnection;
+export default {getConnection};

@@ -1,4 +1,4 @@
-import projectModel from '../models/projectModel'
+import projectModel from '../models/projectModel.js'
 //funcion para listar proyectos
 const listProjects = async (req, res) => {
     
@@ -7,10 +7,9 @@ const listProjects = async (req, res) => {
 
     //dar respuesta
     res.json({
-        succes: true, list: projectsList
+        success: true, list: projectsList
     })
-
-
 }
 
-module.exports = {listProjects};
+export default {listProjects};
+

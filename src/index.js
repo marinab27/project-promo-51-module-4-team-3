@@ -1,11 +1,11 @@
 import express from 'express'; 
 import cors from 'cors'; 
-import projectRoute from './routes/projectRoute'; //importar las rutas
+import projectRoute from './routes/projectRoute.js'; //importar las rutas
 import dotenv from 'dotenv'; 
 dotenv.config();
 
 const server = express(); 
-const port = 4000; 
+const port = process.env.PORT || 4000;
 
 server.use(express.json()); 
 server.use(cors()); 

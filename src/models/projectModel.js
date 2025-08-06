@@ -1,4 +1,4 @@
-import getConnection from '../db/connection';
+import getConnection from '../db/connection.js';
 
 //obtener todos los proyectos (GET)
 const getAll = async () => {
@@ -13,9 +13,9 @@ const getAll = async () => {
 
 //obtener un proyecto con un id específico (GET)
 
+export default {getAll};
 
 
-module.exports = {getAll}
 
 
 

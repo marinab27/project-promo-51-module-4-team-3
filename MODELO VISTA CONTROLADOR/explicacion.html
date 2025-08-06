@@ -47,7 +47,7 @@ index -> routes -> controllers -> models
 		2.3. Hacer un return
 	3. Exportamos la función (para usarla en controllers)
 	
-NOTA: Se tienen ficheros por cada uno de los datos, por ejemplo, si estoy trabajando con usuarios tengo que tener una ruta, un modelo y un controlador para usuarios
+NOTA: se tienen ficheros por cada uno de los datos, por ejemplo, si estoy trabajando con usuarios tengo que tener una ruta, un modelo y un controlador para usuarios
 
 --------
 
@@ -56,7 +56,6 @@ VISUALIZAR PROYECTO
 a. React: cuando hacemos clic en el botón de guardar proyecto, tenemos todos los datos y creamos una tarjeta para que los muestre
 
 b. EJS (motor de plantillas): podemos hacer un endpoint que, en vez de mandar datos al front, mande una vista (una página)
-
 	1. En index le decimos al servidor que use EJS
 	2. Creamos carpeta view y, dentro de esta, un archivo show.ejs. Este fichero es un html donde tengo que poner todo lo que quiero mostrar
 	3. Creamos carpeta styles, donde irán los estilos css
@@ -76,8 +75,8 @@ PUBLICAR PROYECTO
 		3. Hacer npm run build y resto de pasos para publicar (buscar en Slack)
 	
 	b. Render: publicarlo dentro de mi servidor
-		1. Compilar proyecto front del módulo 3 con npm run build. Esto crear una carpeta dist
+		1. Compilar proyecto front del módulo 3 con npm run build. Esto crea una carpeta dist
 		2. Crear carpeta dentro de src: web
 		3. Dentro de la carpeta web meto el proyecto compilado (carpeta dist)
-		4. Hacer un servidor de estáticos en index.js
+		4. Hacer un servidor de estáticos en index.js:
 		server.use(express.static('./src/web'))
