@@ -46,6 +46,14 @@ index -> routes -> controllers -> models
 		2.2. Hacer consulta
 		2.3. Hacer un return
 	3. Exportamos la función (para usarla en controllers)
+
+Forma de trabajar:
+
+1. db: crear conexión con la BD y exportar conexión
+2. models: importar conexión, crear función con la query y exportar función
+3. controllers: importar model, crear función pidiendo los datos a la función que hemos exportado del modelo, dar una respuesta y exportar función
+4. routes: importar controller, en los endpoints utilizar la funcion que hemos importado del controller y exportar router
+5. index: importar routes y decirle al servidor que use las rutas (endpoints) que hemos creado
 	
 NOTA: se tienen ficheros por cada uno de los datos, por ejemplo, si estoy trabajando con usuarios tengo que tener una ruta, un modelo y un controlador para usuarios
 
