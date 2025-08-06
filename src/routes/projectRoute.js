@@ -15,7 +15,7 @@ router.get('/list', projectController.listProjects);
 router.get('/detail/:id', projectController.listOneProject); 
 
 //añadir un proyecto
-//router.post('/add', controller);
+router.post('/add', projectController.addAuthorAndProject);
 
 
 export default router;
