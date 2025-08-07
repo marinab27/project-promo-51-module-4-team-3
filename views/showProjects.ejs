@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section class="preview">
+        <div class="preview__container">
+          <div
+            class="projectImage"
+            style="background-image: url('<%= data.image %>')"
+          ></div>
+
+          <article class="card">
+            <h2 class="card__projectTitle">
+              <span class="card__projectTitle--text">
+                Tarjeta proyecto personal
+              </span>
+            </h2>
+
+            <div class="card__author">
+              <div
+                class="card__authorPhoto"
+                style="background-image: url('<%= data.photo %>')"
+              ></div>
+              <p class="card__job"><%= data.job || 'Full Stack Developer' %></p>
+              <h3 class="card__name"><%= data.author || 'Sylvia Johnson' %></h3>
+            </div>
+
+            <div class="card__project">
+              <h3 class="card__name"><%= data.name || 'Your Next Book' %></h3>
+              <p class="card__slogan">
+                <%= data.slogan || 'Comparte tu libro favorito' %>
+              </p>
+
+              <h3 class="card__descriptionTitle">Descripción del producto</h3>
+              <p class="card__description">
+                <%= data.description || 'Crea tu tarjeta literaria' %>
+              </p>
+
+              <div class="card__technicalInfo">
+                <p class="card__technologies">
+                  <%= data.technologies || 'HTML | CSS | React' %>
+                </p>
+
+                <a
+                  class="icon icon__www"
+                  href="<%= data.demo || '#' %>"
+                  title="Haz click para ver el proyecto online"
+                >
+                  Web link
+                </a>
+                <a
+                  class="icon icon__github"
+                  href="<%= data.repo || '#' %>"
+                  title="Haz click para ver el código del proyecto"
+                >
+                  GitHub link
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
