@@ -21,7 +21,8 @@ const listOneProject = async (req, res) => {
       mensaje: "⚠️El ID no coincide con ninguna frase",
     });
   } else {
-    res.status(200).json({ success: true, results: oneProject });
+    console.log(oneProject);
+    res.render("showProjects", { oneProject: oneProject[0] });
   }
 };
 

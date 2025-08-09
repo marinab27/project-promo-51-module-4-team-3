@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,10 +7,15 @@
   <body>
     <main>
       <section class="preview">
+        <h2>Página de detalle</h2>
+        <p>URL imagen: <%= oneProject.image %></p>
+        <img src="<%= oneProject.image %>" />
+        <img src="https://placecats.com/bella/300/200" />
+        <img src="https://placebear.com/g/200/300" alt="">
         <div class="preview__container">
           <div
             class="projectImage"
-            style="background-image: url('<%= data.image %>')"
+            style="background-image: url('<%= oneProject.image %>')"
           ></div>
 
           <article class="card">
@@ -24,38 +28,32 @@
             <div class="card__author">
               <div
                 class="card__authorPhoto"
-                style="background-image: url('<%= data.photo %>')"
+                style="background-image: url('<%= oneProject.photo %>')"
               ></div>
-              <p class="card__job"><%= data.job || 'Full Stack Developer' %></p>
-              <h3 class="card__name"><%= data.author || 'Sylvia Johnson' %></h3>
+              <p class="card__job"><%= oneProject.job %></p>
+              <h3 class="card__name"><%= oneProject.author %></h3>
             </div>
 
             <div class="card__project">
-              <h3 class="card__name"><%= data.name || 'Your Next Book' %></h3>
-              <p class="card__slogan">
-                <%= data.slogan || 'Comparte tu libro favorito' %>
-              </p>
+              <h3 class="card__name"><%= oneProject.name %></h3>
+              <p class="card__slogan"><%= oneProject.slogan %></p>
 
               <h3 class="card__descriptionTitle">Descripción del producto</h3>
-              <p class="card__description">
-                <%= data.description || 'Crea tu tarjeta literaria' %>
-              </p>
+              <p class="card__description"><%= oneProject.description %></p>
 
               <div class="card__technicalInfo">
-                <p class="card__technologies">
-                  <%= data.technologies || 'HTML | CSS | React' %>
-                </p>
+                <p class="card__technologies"><%= oneProject.technologies %></p>
 
                 <a
                   class="icon icon__www"
-                  href="<%= data.demo || '#' %>"
+                  href="<%= oneProject.demo %>"
                   title="Haz click para ver el proyecto online"
                 >
                   Web link
                 </a>
                 <a
                   class="icon icon__github"
-                  href="<%= data.repo || '#' %>"
+                  href="<%= oneProject.repo %>"
                   title="Haz click para ver el código del proyecto"
                 >
                   GitHub link
