@@ -16,7 +16,8 @@ server.set("view engine", "ejs");
 server.use(express.json());
 server.use(cors());
 server.use("/project", projectRoute); //le digo al servidor que use las rutas
-
+const staticServer = "./styles";
+server.use(express.static(staticServer));
 
 //escuchar el puerto
 server.listen(port, () => {

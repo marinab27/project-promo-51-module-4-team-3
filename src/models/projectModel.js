@@ -16,7 +16,7 @@ const getOne = async (id) => {
   const connection = await getConnection();
 
   const [results] = await connection.query(
-    "SELECT form.id AS formID, form.name, form.slogan, form.repo, form.demo, form.technologies, form.description, form.image, author_id, authors.id AS authorID, authors.job, authors.photo FROM form INNER JOIN authors ON form.author_id = authors.id WHERE form.id = ?;",
+    "SELECT form.id AS formID, form.name, form.slogan, form.repo, form.demo, form.technologies, form.description, form.image, author_id, authors.id AS authorID, authors.author, authors.job, authors.photo FROM form INNER JOIN authors ON form.author_id = authors.id WHERE form.id = ?;",
     [id]
   );
   //esta query necesita un id, que hay que dárselo por parámetros y viene desde el controller

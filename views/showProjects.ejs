@@ -2,16 +2,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Detalle del proyecto</title>
+    <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
     <main>
       <section class="preview">
         <h2>Página de detalle</h2>
         <p>URL imagen: <%= oneProject.image %></p>
-        <img src="<%= oneProject.image %>" />
-        <img src="https://placecats.com/bella/300/200" />
-        <img src="https://placebear.com/g/200/300" alt="">
         <div class="preview__container">
           <div
             class="projectImage"
@@ -38,7 +36,7 @@
               <h3 class="card__name"><%= oneProject.name %></h3>
               <p class="card__slogan"><%= oneProject.slogan %></p>
 
-              <h3 class="card__descriptionTitle">Descripción del producto</h3>
+              <h3 class="card__descriptionTitle">Descripción del proyecto</h3>
               <p class="card__description"><%= oneProject.description %></p>
 
               <div class="card__technicalInfo">
