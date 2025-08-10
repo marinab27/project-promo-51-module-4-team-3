@@ -4,12 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalle del proyecto</title>
     <link rel="stylesheet" href="/main.css" />
+    <link rel="icon" href="/public/favicon.png" type="image/x-icon" />
   </head>
   <body>
     <main>
       <section class="preview">
-        <h2>Página de detalle</h2>
-        <p>URL imagen: <%= oneProject.image %></p>
+        <h2 class="preview_title">Tu proyecto en detalle</h2>
+        <a class="back_button" href="/"> Volver al inicio </a>
+        <!-- <p>URL imagen: <%= oneProject.image %></p> -->
         <div class="preview__container">
           <div
             class="projectImage"
@@ -47,14 +49,12 @@
                   href="<%= oneProject.demo %>"
                   title="Haz click para ver el proyecto online"
                 >
-                  Web link
                 </a>
                 <a
                   class="icon icon__github"
                   href="<%= oneProject.repo %>"
                   title="Haz click para ver el código del proyecto"
                 >
-                  GitHub link
                 </a>
               </div>
             </div>
@@ -62,5 +62,18 @@
         </div>
       </section>
     </main>
+    <script>
+      document.addEventListener("mousemove", (e) => {
+        const sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+        sparkle.style.left = `${e.pageX - 4}px`;
+        sparkle.style.top = `${e.pageY - 4}px`;
+        document.body.appendChild(sparkle);
+
+        sparkle.addEventListener("animationend", () => {
+          sparkle.remove();
+        });
+      });
+    </script>
   </body>
 </html>

@@ -11,7 +11,7 @@ server.use(
     limit: "50mb",
   })
 );
-
+server.use(express.static('public'));
 server.set("view engine", "ejs");
 server.use(express.json());
 server.use(cors());
