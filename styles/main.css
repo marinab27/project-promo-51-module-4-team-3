@@ -72,7 +72,7 @@ body {
   grid-template-columns: 40% 60%;
   padding: 2%;
   background-color: white;
-  width: 50%;
+  width: 800px;
   color: #000;
   border-radius: 20px;
   box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.25);
